@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema 24/7 - Intermediación Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .pre-headline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--white);
+            text-decoration: none;
+            padding: 18px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:active { transform: scale(0.98); }
+
+        /* --- SECCIÓN LEAD --- */
+        .lead-section {
+            background: var(--white);
+            padding: 40px 25px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .lead-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* --- SECCIÓN MECANISMO --- */
+        .mechanism {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .infographic {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #fff;
+            padding: 30px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 30px 0;
+        }
+
+        .info-item { font-size: 0.8rem; font-weight: 600; }
+        .info-arrow { font-size: 1.2rem; color: var(--accent); }
+
+        /* --- SECCIÓN OFERTA (MÓDULOS) --- */
+        .module {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .module h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .module li {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .module li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- CIERRE Y GARANTÍA --- */
+        .guarantee {
+            background: #fef2f2;
+            border: 1px dashed #ef4444;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .price-anchor {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            .btn { width: auto; padding: 18px 50px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="hero">
+        <span class="pre-headline">ATENCIÓN: Para quienes buscan generar ingresos online pero odian ser "Influencers"</span>
+        <h1>Cómo construir un Negocio de "Intermediación Digital" y generar ingresos con productos que YA existen...</h1>
+        <p class="sub-headline">Sin tener que bailar en TikTok, sin crear tu propio producto y sin mostrar tu cara si no quieres. Deja de perseguir la fama y empieza a perseguir la rentabilidad.</p>
+        <a href="#" class="btn">(SÍ) QUIERO VER EL SISTEMA POR DENTRO - $11 USD</a>
+    </header>
+
+    <section class="lead-section">
+        <div class="lead-text">
+            <p>Seamos honestos por un segundo.</p>
+            <p>Probablemente has visto a cientos de "gurús" prometiéndote que puedes hacerte rico mañana presionando un botón mágico mientras duermes.</p>
+            <p><strong>Si estás leyendo esto, es porque ya sabes que eso es mentira.</strong></p>
+            <p>Pero, ¿y si pudieras operar en el mercado digital no como el "protagonista" del escenario, sino como el <strong>"dueño del teatro"</strong>?</p>
+        </div>
+    </section>
+
+    <section class="mechanism">
+        <h2>Bienvenido a la Era de la "Intermediación Digital"</h2>
+        <div class="infographic">
+            <div class="info-item">📦<br>Producto Viral</div>
+            <div class="info-arrow">→</div>
+            <div class="info-item" style="color:var(--accent)">⚙️<br>TU SISTEMA</div>
+            <div class="info-arrow">→</div>
+            <div class="info-item">👤<br>Clientes</div>
+        </div>
+        <p style="text-align:left; margin-bottom:20px;">Uber no es dueño de los taxis. Airbnb no es dueño de los hoteles. Amazon no fabrica lo que vende. Ellos controlan el puente. Cuando controlas el puente, controlas la comisión.</p>
+    </section>
+
+    <section class="offer">
+        <h2 style="margin-bottom:30px;">Manual de Implementación Táctica</h2>
+        
+        <div class="module">
+            <h3>⚙️ MÓDULO 1: LA INFRAESTRUCTURA INVISIBLE</h3>
+            <ul>
+                <li>Configura tus redes para ventas, no para likes.</li>
+                <li>El Protocolo "Faceless": vende sin mostrar tu rostro.</li>
+                <li>Landing Pages de alta conversión.</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <h3>📡 MÓDULO 2: EL RADAR DE PRODUCTOS</h3>
+            <ul>
+                <li>Detecta productos ganadores en tiempo real.</li>
+                <li>Identificación de "Océanos Azules".</li>
+                <li>Asegura tus comisiones de intermediario.</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <h3>💵 MÓDULO 3: EL SISTEMA DE CIERRE</h3>
+            <ul>
+                <li>Convierte tráfico frío en dinero en el banco.</li>
+                <li>Automatización básica 24/7.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="price-anchor">
+        <h3>¿Por qué solo $11 USD?</h3>
+        <p style="margin: 20px 0; color: var(--text-muted);">Es una prueba de filtrado. Queremos a gente dispuesta a invertir en su educación. Es una inversión en nuestra relación a largo plazo.</p>
+        
+        <div style="text-align: left; background: #eee; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+            <p><strong>TIENES 2 OPCIONES HOY:</strong></p>
+            <p>1. Seguir intentando descifrar el algoritmo por tu cuenta.</p>
+            <p>2. Descargar el Sistema 24/7 y montar tu ecosistema esta misma semana.</p>
+        </div>
+
+        <div class="guarantee">
+            <p><strong>🛡️ GARANTÍA "SIN RIESGO TÉCNICO"</strong></p>
+            <p style="font-size: 0.9rem;">Si no te gusta, te devolvemos el 100% de tus $11. Sin preguntas.</p>
+        </div>
+
+        <div style="margin-top:40px;">
+            <a href="#" class="btn" style="background-color: #059669;">DESCARGAR EL SISTEMA AHORA - $11</a>
+            <p style="font-size: 0.8rem; margin-top:10px;">Acceso Inmediato a los 3 Módulos + Bonos</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Sistema 24/7 - Todos los derechos reservados.
+    </footer>
+</div>
+
+</body>
+</html>
