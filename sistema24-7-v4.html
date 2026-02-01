@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA MUERTE DEL INFLUENCER - Manifiesto Digital</title>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1055704156770118');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1055704156770118&ev=PageView&noscript=1"
+    /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-red: #FF0000;
+            --accent-yellow: #FFD700;
+            --accent-green: #00c853;
+            --font-impact: 'Oswald', sans-serif;
+            --font-body: 'Merriweather', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Tipografía Utilitaria */
+        h1, h2, h3, .impact-text { font-family: var(--font-impact); text-transform: uppercase; letter-spacing: 1px; }
+        .text-red { color: var(--accent-red); }
+        .text-yellow { color: var(--accent-yellow); }
+        .bold { font-weight: 700; }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+            transition: max-width 0.3s ease;
+        }
+
+        /* Barra Superior */
+        .top-bar {
+            background: var(--accent-red);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-family: var(--font-impact);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Botones */
+        .btn-aggressive {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: var(--accent-red);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-family: var(--font-impact);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid var(--accent-red);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-aggressive:hover {
+            background: #cc0000;
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+        }
+
+        /* Secciones */
+        section { padding: 50px 0; border-bottom: 1px solid #333; }
+
+        /* Hero */
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero .subhead { font-size: 1.1rem; margin-bottom: 30px; font-style: italic; }
+
+        /* Iceberg Gráfico CSS */
+        .iceberg-box {
+            border: 3px solid var(--accent-red);
+            margin: 40px 0;
+            text-align: center;
+        }
+        .iceberg-top {
+            background: #222;
+            padding: 30px;
+            border-bottom: 3px dashed var(--accent-yellow);
+        }
+        .iceberg-bottom {
+            background: #111;
+            padding: 40px 30px;
+            position: relative;
+        }
+        .iceberg-bottom::before {
+            content: "▼ BAJO LA SUPERFICIE ▼";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-yellow);
+            color: black;
+            font-family: var(--font-impact);
+            font-size: 0.7rem;
+            padding: 2px 10px;
+        }
+
+        /* Módulos (Arsenal) */
+        .module-box {
+            background: #111;
+            border-left: 5px solid var(--accent-red);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .module-box h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--accent-red); }
+        .module-box ul { padding-left: 20px; list-style-type: square; }
+
+        /* Tabla Comparativa */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-family: var(--font-impact);
+        }
+        .comparison-table th {
+            padding: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+        .th-guru { background: #330000; color: var(--accent-red); border: 2px solid var(--accent-red); }
+        .th-system { background: #003300; color: var(--accent-green); border: 2px solid var(--accent-green); }
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #333;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .comparison-table tr:nth-child(even) { background: #0a0a0a; }
+
+        /* Garantía */
+        .guarantee-box {
+            border: 4px dashed var(--accent-red);
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            background: #0a0000;
+        }
+
+        footer { text-align: center; padding: 40px 0; font-size: 0.8rem; opacity: 0.7; }
+
+        /* --- Responsive PC --- */
+        @media (min-width: 768px) {
+            .container { max-width: 900px; padding: 40px 40px 80px; }
+            .hero h1 { font-size: 4rem; }
+            .hero .subhead { font-size: 1.4rem; }
+            section p { font-size: 1.1rem; }
+            .btn-aggressive { width: auto; display: inline-block; padding: 25px 60px; font-size: 1.4rem; }
+            .center-pc { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar" data-aos="fade-down">
+        🚫 DEJA DE BAILAR. DEJA DE FINGIR. EL JUEGO HA CAMBIADO.
+    </div>
+
+    <div class="container">
+        
+        <section class="hero" data-aos="fade-up">
+            <h1>LA BURBUJA DEL <span class="text-red">"INFLUENCER"</span> HA ESTALLADO:</h1>
+            <p>Por qué los "famosos" de TikTok están en quiebra, mientras un grupo de desconocidos se está haciendo rico en silencio.</p>
+            <p class="subhead text-yellow">Descubre el protocolo de "Intermediación Fantasma": Cómo generar flujos de efectivo reales sin seguidores, sin marca personal y sin venderle tu alma al algoritmo.</p>
+            
+            <div class="center-pc">
+                <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-aggressive">[☠️] UNIRME A LA RESISTENCIA DIGITAL ($11)</a>
+                <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">(Advertencia: Este contenido ofenderá a los gurús)</p>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="200">
+            <h2 class="impact-text text-red" style="font-size: 2rem; margin-bottom: 30px;">LA VERDAD DOLOROSA</h2>
+            <p>Te voy a decir algo que nadie más se atreve a decirte: <span class="bold text-yellow">Los "Likes" no pagan las facturas.</span></p>
+            <p>Abre tu Instagram. ¿Qué ves? Gente alquilando Lamborghinis por horas. Es un circo. Y todos son los payasos.</p>
+            <p>La triste realidad es que el 95% de esos "Influencers" están quebrados. Son esclavos del algoritmo.</p>
+            <div style="border-left: 4px solid var(--accent-yellow); padding-left: 20px; margin: 30px 0;">
+                <p class="impact-text" style="font-size: 1.3rem;">MIENTRAS TANTO, EXISTE UNA ÉLITE SILENCIOSA.</p>
+                <p>No tienen millones de seguidores. A veces, ni siquiera tienen foto de perfil. Pero revisan sus cuentas bancarias y ven depósitos diarios de $50, $100, $500 USD.</p>
+            </div>
+            <p class="bold" style="font-size: 1.2rem;">Los Influencers buscan Atención. La Élite Silenciosa busca Transacción. Nosotros no construimos "audiencias". Construimos SISTEMAS.</p>
+        </section>
+
+        <section data-aos="zoom-in">
+            <h2 class="impact-text center-pc">EL MODELO: "PROFIT OVER FAME"</h2>
+            
+            <div class="iceberg-box">
+                <div class="iceberg-top">
+                    <h3 style="color: #999;">INFLUENCERS</h3>
+                    <p style="font-family: var(--font-impact);">(Ruido / Vanidad / Pobreza)</p>
+                </div>
+                <div class="iceberg-bottom">
+                    <h3 class="text-yellow" style="font-size: 2rem;">SISTEMA 24/7</h3>
+                    <p style="font-family: var(--font-impact); color: white;">(Estrategia / Anonimato / Riqueza)</p>
+                </div>
+            </div>
+
+            <p>El Sistema 24/7 no es un "cursito" más. Es una declaración de guerra contra la vanidad. Nos basamos en una premisa económica simple: <span class="bold text-yellow">El dinero se mueve cuando un producto soluciona un problema. No cuando tú te tomas una selfie.</span></p>
+        </section>
+
+        <section>
+            <h2 class="impact-text text-red center-pc" style="margin-bottom: 40px;">EL ARSENAL OPERATIVO</h2>
+
+            <div class="module-box" data-aos="fade-left">
+                <h3>💀 FASE 1: LA MUERTE DEL EGO</h3>
+                <p>Configuración de tu "Búnker Digital". Cuentas blindadas contra el rastreo personal y la Matriz de Contenido Anónimo para generar tráfico sin grabar tu voz.</p>
+            </div>
+
+            <div class="module-box" data-aos="fade-left" data-aos-delay="200">
+                <h3>🎯 FASE 2: EL FRANCOTIRADOR</h3>
+                <p>Por qué vender "Cursos de Marketing" es para novatos. Te enseñamos a encontrar nichos reales donde la gente gasta dinero real. El Radar de Tendencias incluido.</p>
+            </div>
+
+            <div class="module-box" data-aos="fade-left" data-aos-delay="400">
+                <h3>⚙️ FASE 3: LA MÁQUINA DE DINERO</h3>
+                <p>El esquema de "Embudo Mínimo Viable": Cómo montar una página que vende en menos de 2 horas e integración de pasarelas de cobro.</p>
+            </div>
+        </section>
+
+        <section data-aos="flip-up">
+            <h2 class="impact-text center-pc">COMPARATIVA AGRESIVA</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="th-guru">EL MÉTODO "GURÚ"</th>
+                        <th class="th-system">PROTOCOLO 24/7</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Necesitas 10k seguidores.</td>
+                        <td class="bold">Empiezas con 0 hoy.</td>
+                    </tr>
+                    <tr>
+                        <td>Tienes que bailar y fingir.</td>
+                        <td class="bold">Mantienes tu dignidad.</td>
+                    </tr>
+                    <tr>
+                        <td>Creas contenido todo el día (Esclavo).</td>
+                        <td class="bold">Creas activos una vez, cobran siempre.</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresos inestables (dependen de likes).</td>
+                        <td class="bold">Ingresos predecibles (sistemas).</td>
+                    </tr>
+                    <tr>
+                        <td class="text-red bold" style="font-size: 1.1rem;">Precio: $497 USD</td>
+                        <td class="text-yellow bold" style="font-size: 1.3rem;">Acceso: $11 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="guarantee-box" data-aos="zoom-in">
+            <h2 class="impact-text text-yellow">🛡️ GARANTÍA DE "CERO BULLSHIT" (7 DÍAS)</h2>
+            <p style="margin-top: 20px;">Vamos a hacer un trato de adultos. Yo no quiero tu dinero si tú no obtienes valor. Entra al sistema. Tienes 168 horas para poner a prueba el material.</p>
+            <p style="margin-top: 20px;">Si en algún momento sientes que esto es "más de lo mismo", o si simplemente no tienes el estómago para este tipo de estrategia agresiva, te devolvemos el 100% de tus $11. <span class="bold text-red">El riesgo es todo mío. ¿Te atreves?</span></p>
+        </section>
+
+        <section class="center-pc" data-aos="fade-up">
+            <h2 class="impact-text" style="font-size: 2rem; margin-bottom: 20px;">EL ULTIMÁTUM FINAL</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">La puerta se está cerrando. Los "payasos" están siendo purgados. El precio de entrada es de $11 dólares. Menos de lo que te gastas en cervezas un viernes. ¿Tu futuro vale menos que una pizza? Demuéstrate que no.</p>
+            
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-aggressive" style="font-size: 1.5rem; padding: 30px;">[DESCARGAR EL SISTEMA Y EMPEZAR A FACTURAR]</a>
+            <p style="font-size: 0.9rem; margin-top: 15px; color: var(--accent-yellow); font-family: var(--font-impact);">(Acceso Inmediato - Encriptado SSL - Garantía 7 Días)</p>
+        </section>
+
+        <footer>
+            Políticas del sistema 24/7 // NO FACE. ALL PROFIT. // 2026
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar animaciones al hacer scroll
+        AOS.init({
+            duration: 800, // Duración de la animación en ms
+            once: true, // Si true, la animación solo ocurre una vez al bajar
+            offset: 100 // Distancia en px antes de activar la animación
+        });
+    </script>
+
+</body>
+</html>
