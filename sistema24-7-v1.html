@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema 24/7 - Intermediación Digital</title>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1055704156770118');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1055704156770118&ev=PageView&noscript=1"
+    /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #f9fafb;
@@ -15,7 +32,23 @@
             --accent: #2563eb;
             --border: #e5e7eb;
             --white: #ffffff;
+            --success: #059669;
         }
+
+        /* Keyframes para Animaciones */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -28,9 +61,10 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 600px; /* Base móvil */
             margin: 0 auto;
             padding: 20px;
+            transition: max-width 0.3s ease;
         }
 
         /* --- SECCIÓN HERO --- */
@@ -68,12 +102,18 @@
             background-color: var(--text-main);
             color: var(--white);
             text-decoration: none;
-            padding: 18px 25px;
+            padding: 20px 30px;
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
             width: 100%;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
         .btn:active { transform: scale(0.98); }
@@ -129,10 +169,7 @@
             gap: 10px;
         }
 
-        .module ul {
-            list-style: none;
-            padding-left: 0;
-        }
+        .module ul { list-style: none; padding-left: 0; }
 
         .module li {
             font-size: 0.95rem;
@@ -171,24 +208,26 @@
             color: var(--text-muted);
         }
 
-        /* Responsive */
+        /* Responsive Desktop */
         @media (min-width: 768px) {
-            h1 { font-size: 3rem; }
-            .btn { width: auto; padding: 18px 50px; }
+            .container { max-width: 800px; }
+            h1 { font-size: 3.2rem; }
+            .btn { width: auto; padding: 20px 60px; }
+            .lead-section { padding: 60px 80px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header class="hero">
+    <header class="hero animate">
         <span class="pre-headline">ATENCIÓN: Para quienes buscan generar ingresos online pero odian ser "Influencers"</span>
         <h1>Cómo construir un Negocio de "Intermediación Digital" y generar ingresos con productos que YA existen...</h1>
         <p class="sub-headline">Sin tener que bailar en TikTok, sin crear tu propio producto y sin mostrar tu cara si no quieres. Deja de perseguir la fama y empieza a perseguir la rentabilidad.</p>
-        <a href="#" class="btn">(SÍ) QUIERO VER EL SISTEMA POR DENTRO - $11 USD</a>
+        <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn">(SÍ) QUIERO VER EL SISTEMA POR DENTRO - $11 USD</a>
     </header>
 
-    <section class="lead-section">
+    <section class="lead-section animate delay-1">
         <div class="lead-text">
             <p>Seamos honestos por un segundo.</p>
             <p>Probablemente has visto a cientos de "gurús" prometiéndote que puedes hacerte rico mañana presionando un botón mágico mientras duermes.</p>
@@ -197,7 +236,7 @@
         </div>
     </section>
 
-    <section class="mechanism">
+    <section class="mechanism animate delay-2">
         <h2>Bienvenido a la Era de la "Intermediación Digital"</h2>
         <div class="infographic">
             <div class="info-item">📦<br>Producto Viral</div>
@@ -209,8 +248,8 @@
         <p style="text-align:left; margin-bottom:20px;">Uber no es dueño de los taxis. Airbnb no es dueño de los hoteles. Amazon no fabrica lo que vende. Ellos controlan el puente. Cuando controlas el puente, controlas la comisión.</p>
     </section>
 
-    <section class="offer">
-        <h2 style="margin-bottom:30px;">Manual de Implementación Táctica</h2>
+    <section class="offer animate delay-3">
+        <h2 style="margin-bottom:30px; text-align: center;">Manual de Implementación Táctica</h2>
         
         <div class="module">
             <h3>⚙️ MÓDULO 1: LA INFRAESTRUCTURA INVISIBLE</h3>
@@ -239,11 +278,11 @@
         </div>
     </section>
 
-    <section class="price-anchor">
+    <section class="price-anchor animate delay-3">
         <h3>¿Por qué solo $11 USD?</h3>
         <p style="margin: 20px 0; color: var(--text-muted);">Es una prueba de filtrado. Queremos a gente dispuesta a invertir en su educación. Es una inversión en nuestra relación a largo plazo.</p>
         
-        <div style="text-align: left; background: #eee; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+        <div style="text-align: left; background: #eee; padding: 25px; border-radius: 8px; margin-bottom: 30px;">
             <p><strong>TIENES 2 OPCIONES HOY:</strong></p>
             <p>1. Seguir intentando descifrar el algoritmo por tu cuenta.</p>
             <p>2. Descargar el Sistema 24/7 y montar tu ecosistema esta misma semana.</p>
@@ -255,7 +294,7 @@
         </div>
 
         <div style="margin-top:40px;">
-            <a href="#" class="btn" style="background-color: #059669;">DESCARGAR EL SISTEMA AHORA - $11</a>
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn" style="background-color: var(--success);">DESCARGAR EL SISTEMA AHORA - $11</a>
             <p style="font-size: 0.8rem; margin-top:10px;">Acceso Inmediato a los 3 Módulos + Bonos</p>
         </div>
     </section>
