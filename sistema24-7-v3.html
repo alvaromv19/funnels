@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Técnico - Sistema 24/7</title>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1055704156770118');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1055704156770118&ev=PageView&noscript=1"
+    /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg: #ffffff;
@@ -17,6 +34,17 @@
             --mono: 'JetBrains Mono', monospace;
         }
 
+        /* Animaciones */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate { opacity: 0; animation: slideIn 0.6s ease-out forwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -24,38 +52,45 @@
             line-height: 1.5;
             color: var(--text);
             background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* BARRA SUPERIOR */
         .warning-bar {
             background: #000;
             color: #fff;
             padding: 12px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-align: center;
             font-family: var(--mono);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: max-width 0.3s ease;
+        }
 
-        /* HERO */
-        .hero { padding: 40px 0; border-bottom: 2px solid #000; }
+        .hero { padding: 60px 0 40px; border-bottom: 3px solid #000; }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            line-height: 1;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .sub-headline {
             font-family: var(--mono);
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--gray-dark);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
         }
 
         .btn-tech {
@@ -64,81 +99,104 @@
             color: #fff;
             text-align: center;
             text-decoration: none;
-            padding: 20px;
+            padding: 22px;
             font-weight: 700;
             font-family: var(--mono);
             border: 2px solid #000;
+            font-size: 1.1rem;
             transition: all 0.2s;
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
         }
 
-        .btn-tech:active { background: #fff; color: #000; }
+        .btn-tech:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--accent);
+        }
 
-        /* LEAD - LA VERDAD INCÓMODA */
+        .btn-tech:active { transform: translate(0,0); }
+
         .equation {
             background: var(--gray-light);
-            padding: 20px;
+            padding: 25px;
             font-family: var(--mono);
-            font-size: 0.85rem;
-            border-left: 4px solid #000;
-            margin: 20px 0;
+            font-size: 0.9rem;
+            border: 1px solid #000;
+            margin: 30px 0;
+            position: relative;
         }
 
-        /* MECANISMO */
+        .equation::before {
+            content: "LOGIC_INPUT";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #000;
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+        }
+
         .step {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            border-left: 1px solid #e5e7eb;
+            margin-bottom: 40px;
+            padding-left: 25px;
+            border-left: 2px solid #e5e7eb;
         }
 
         .step-title {
             font-family: var(--mono);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--accent);
+            margin-bottom: 10px;
         }
 
-        /* DESGLOSE OPERATIVO */
         .phase-box {
             border: 2px solid #000;
-            margin-bottom: 15px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 25px;
+            background: #fff;
         }
 
         .phase-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-family: var(--mono);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
-        /* LÓGICA DE PRECIO */
         .logic-section {
             background: #000;
             color: #fff;
-            padding: 30px 20px;
-            margin: 40px -20px;
+            padding: 50px 30px;
+            margin: 60px -20px;
         }
 
-        .logic-section h2 { font-family: var(--mono); font-size: 1.2rem; margin-bottom: 15px; }
-
-        /* GARANTÍA */
         .guarantee {
             border: 2px dashed #000;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            margin: 40px 0;
+            margin: 50px 0;
+            background: #fafafa;
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0;
             font-family: var(--mono);
-            font-size: 0.7rem;
-            opacity: 0.6;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive PC */
+        @media (min-width: 768px) {
+            .container { max-width: 850px; }
+            h1 { font-size: 3.5rem; }
+            .btn-tech { display: inline-block; padding: 22px 50px; }
+            .phase-box { display: inline-block; width: 100%; }
         }
     </style>
 </head>
@@ -149,15 +207,15 @@
     </div>
 
     <div class="container">
-        <section class="hero">
+        <section class="hero animate">
             <h1>Cómo configurar un Ecosistema de Intermediación Digital en 7 días o menos.</h1>
             <p class="sub-headline">El marketing digital es ingeniería, no suerte. Descarga el Manual de Operaciones hoy.</p>
-            <a href="#" class="btn-tech">[⬇] DESCARGAR MANUAL - $11 USD</a>
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-tech">[⬇] DESCARGAR MANUAL - $11 USD</a>
         </section>
 
-        <section style="padding: 40px 0;">
-            <p><strong>Hablemos claro.</strong></p>
-            <p>El 99% fracasa porque trata el negocio como un casino. Los que facturan de verdad tienen <strong>SISTEMAS</strong>.</p>
+        <section class="animate delay-1" style="padding: 60px 0;">
+            <p style="font-size: 1.1rem;"><strong>Hablemos claro.</strong></p>
+            <p style="margin-top: 15px;">El 99% fracasa porque trata el negocio como un casino. Los que facturan de verdad tienen <strong>SISTEMAS</strong>.</p>
             
             <div class="equation">
                 (Producto Validado + Tráfico Cualificado) x Conversión = Ingresos.
@@ -166,61 +224,61 @@
             <p>Si fallas en la configuración técnica de cualquiera de estas variables, el resultado es cero. El Sistema 24/7 es un Manual de Implementación, no un curso motivacional.</p>
         </section>
 
-        <section>
-            <h2 style="font-family: var(--mono); font-size: 1.2rem; margin-bottom: 25px;">LA INGENIERÍA DETRÁS DE LA VENTA</h2>
+        <section class="animate delay-2">
+            <h2 style="font-family: var(--mono); font-size: 1.3rem; margin-bottom: 35px; text-decoration: underline;">LA INGENIERÍA DETRÁS DE LA VENTA</h2>
             
             <div class="step">
-                <div class="step-title">01. Identificación</div>
-                <p style="font-size: 0.9rem;">Usamos datos (no intuición) para encontrar productos que la gente ya está buscando.</p>
+                <div class="step-title">01. Identificación (Data Mining)</div>
+                <p style="font-size: 0.95rem;">Usamos datos (no intuición) para encontrar productos que la gente ya está buscando desesperadamente.</p>
             </div>
 
             <div class="step">
-                <div class="step-title">02. Infraestructura</div>
-                <p style="font-size: 0.9rem;">Desplegamos "Páginas Puente" y perfiles optimizados para capturar la demanda.</p>
+                <div class="step-title">02. Infraestructura (Setup)</div>
+                <p style="font-size: 0.95rem;">Desplegamos "Páginas Puente" y perfiles optimizados para capturar la demanda existente.</p>
             </div>
 
             <div class="step">
-                <div class="step-title">03. Enrutamiento</div>
-                <p style="font-size: 0.9rem;">Dirigimos el tráfico y cobramos la comisión. Es pura logística.</p>
+                <div class="step-title">03. Enrutamiento (Profit)</div>
+                <p style="font-size: 0.95rem;">Dirigimos el tráfico hacia la oferta y cobramos la comisión. Es pura logística técnica.</p>
             </div>
         </section>
 
-        <section style="margin-top: 40px;">
-            <h2 style="margin-bottom: 20px; font-size: 1.3rem;">DESGLOSE OPERATIVO:</h2>
+        <section class="animate delay-3" style="margin-top: 60px;">
+            <h2 style="margin-bottom: 30px; font-size: 1.5rem; letter-spacing: -1px;">DESGLOSE OPERATIVO:</h2>
 
             <div class="phase-box">
-                <div class="phase-header">🔧 FASE 1: SETUP</div>
-                <p style="font-size: 0.85rem;">Configuración de cuentas en Meta/TikTok evitando bloqueos y estructura de Landing Pages de alta conversión.</p>
-            </div>
-
-            <div class="phase-box">
-                <div class="phase-header">📊 FASE 2: DATA MINING</div>
-                <p style="font-size: 0.85rem;">Checklist de 10 puntos para validar productos antes de invertir un solo dólar.</p>
+                <div class="phase-header">🔧 FASE 1: SETUP ESTRUCTURAL</div>
+                <p style="font-size: 0.9rem; color: var(--gray-dark);">Configuración técnica de cuentas en Meta/TikTok evitando bloqueos y diseño de Landing Pages con arquitectura de conversión probada.</p>
             </div>
 
             <div class="phase-box">
-                <div class="phase-header">🔌 FASE 3: EJECUCIÓN</div>
-                <p style="font-size: 0.85rem;">Flujo de trabajo diario de 30 minutos para mantener el sistema operando.</p>
+                <div class="phase-header">📊 FASE 2: VALIDACIÓN DE ACTIVOS</div>
+                <p style="font-size: 0.9rem; color: var(--gray-dark);">Checklist de 10 puntos para auditar la rentabilidad de un producto antes de invertir en tráfico.</p>
+            </div>
+
+            <div class="phase-box">
+                <div class="phase-header">🔌 FASE 3: EJECUCIÓN CONTINUA</div>
+                <p style="font-size: 0.9rem; color: var(--gray-dark);">Flujo de trabajo diario de 30 minutos. Mantenimiento del sistema y automatización de cobros.</p>
             </div>
         </section>
 
-        <section class="logic-section">
-            <h2>¿POR QUÉ $11 USD?</h2>
-            <p style="font-size: 0.9rem; opacity: 0.9;">Es una estrategia de adquisición. Al poner el precio de un almuerzo, eliminamos la barrera de entrada pero filtramos a los curiosos. Es pura lógica de negocios. Win-Win.</p>
+        <section class="logic-section animate delay-3">
+            <h2 style="text-transform: uppercase; letter-spacing: 2px;">¿POR QUÉ $11 USD?</h2>
+            <p style="font-size: 1rem; opacity: 0.9; margin-top: 15px; font-family: var(--mono);">Es una estrategia de adquisición de clientes. Al poner el precio de un almuerzo, eliminamos la barrera de entrada pero filtramos a los curiosos. Es pura lógica de negocios. Win-Win.</p>
         </section>
 
-        <section class="guarantee">
-            <p style="font-family: var(--mono); font-weight: 700;">GARANTÍA DE EJECUCIÓN</p>
-            <p style="font-size: 0.85rem; margin-top: 10px;">Si sigues los pasos técnicos y no logras armar el sistema, te devolvemos tus $11. No queremos tu dinero si no te damos utilidad real.</p>
+        <section class="guarantee animate delay-3">
+            <p style="font-family: var(--mono); font-weight: 700; font-size: 1.1rem;">[!] GARANTÍA DE EJECUCIÓN</p>
+            <p style="font-size: 0.9rem; margin-top: 15px;">Si sigues los pasos técnicos y no logras armar el sistema, te devolvemos tus $11. No queremos tu dinero si no te entregamos una utilidad técnica real.</p>
         </section>
 
-        <section style="text-align: center; padding-bottom: 40px;">
-            <a href="#" class="btn-tech" style="background: #2563eb; border-color: #2563eb;">[⚙️] ACCEDER AL SISTEMA</a>
-            <p style="font-family: var(--mono); font-size: 0.7rem; margin-top: 15px;">DESCARGA INMEDIATA | SIN UPSELLS OCULTOS</p>
+        <section class="animate delay-3" style="text-align: center; padding-bottom: 60px;">
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-tech" style="background: var(--accent); border-color: var(--accent); box-shadow: 6px 6px 0px #000;">[⚙️] ACCEDER AL SISTEMA</a>
+            <p style="font-family: var(--mono); font-size: 0.75rem; margin-top: 20px; font-weight: 700;">DESCARGA INMEDIATA // SIN UPSELLS OCULTOS</p>
         </section>
 
         <footer>
-            LOG_ID: 24-7_SYSTEM_v3 // 2026
+            Politicas del sismeta 24-7_TECH_MANUAL
         </footer>
     </div>
 
