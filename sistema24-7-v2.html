@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protocolo Ghost - Ingresos Silenciosos</title>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1055704156770118');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1055704156770118&ev=PageView&noscript=1"
+    /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-dark: #0f172a; /* Azul muy oscuro para el toque de privacidad */
+            --bg-dark: #0f172a;
             --bg-light: #f8fafc;
             --text-main: #1e293b;
             --text-white: #ffffff;
             --accent-red: #ef4444;
             --accent-ghost: #64748b;
             --border: #e2e8f0;
+            --success: #059669;
         }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate { opacity: 0; animation: fadeInUp 0.7s ease-out forwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -28,25 +57,28 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* BARRA DE AVISO */
         .announcement-bar {
             background-color: var(--bg-dark);
-            color: var(--white);
-            padding: 10px 15px;
+            color: var(--text-white);
+            padding: 12px 15px;
             font-size: 0.75rem;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
             border-bottom: 2px solid var(--accent-red);
         }
 
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: max-width 0.3s ease;
+        }
 
-        /* HERO SECTION */
-        .hero { padding: 40px 0; text-align: center; }
+        .hero { padding: 60px 0 40px; text-align: center; }
 
         h1 {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             line-height: 1.1;
             font-weight: 800;
             margin: 20px 0;
@@ -57,92 +89,80 @@
         .sub-headline {
             font-size: 1.1rem;
             color: #475569;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-        /* BOTONES */
         .btn-ghost {
             display: inline-block;
             background-color: var(--bg-dark);
             color: white;
             text-decoration: none;
-            padding: 20px 25px;
+            padding: 22px 30px;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             width: 100%;
             text-transform: uppercase;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* LEAD / PAIN POINTS */
+        .btn-ghost:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
         .pain-section {
             background: white;
-            padding: 30px 20px;
+            padding: 40px 25px;
             border-radius: 12px;
             border: 1px solid var(--border);
             margin: 20px 0;
         }
 
-        .list-x { list-style: none; margin: 20px 0; }
+        .list-x { list-style: none; margin: 25px 0; }
         .list-x li {
-            padding-left: 30px;
+            padding-left: 35px;
             position: relative;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 500;
         }
-        .list-x li::before {
-            content: "❌";
-            position: absolute;
-            left: 0;
-        }
+        .list-x li::before { content: "❌"; position: absolute; left: 0; }
 
-        /* MÓDULOS - ESTILO TARJETA */
         .module-card {
             background: #fff;
-            padding: 25px;
+            padding: 30px;
             border-radius: 12px;
             border: 1px solid var(--border);
-            margin-bottom: 15px;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 20px;
+            transition: border 0.3s ease;
         }
+        .module-card:hover { border-color: var(--bg-dark); }
 
         .module-card h3 {
-            font-size: 1rem;
-            margin-bottom: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
             color: var(--bg-dark);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .module-card p, .module-card li {
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        .module-card ul { padding-left: 20px; margin-top: 10px; }
-
-        /* GARANTÍA */
         .guarantee-box {
             background: #f1f5f9;
             border: 2px solid var(--bg-dark);
-            padding: 25px;
+            padding: 30px;
             border-radius: 12px;
             margin: 40px 0;
             text-align: center;
         }
 
-        /* FOOTER */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
+        footer { padding: 40px 0; text-align: center; font-size: 0.8rem; color: #94a3b8; }
 
-        strong { color: var(--bg-dark); }
+        /* Responsive Desktop */
+        @media (min-width: 768px) {
+            .container { max-width: 850px; }
+            h1 { font-size: 3.5rem; }
+            .btn-ghost { width: auto; padding: 22px 60px; }
+            .pain-section { padding: 50px 70px; }
+        }
     </style>
 </head>
 <body>
@@ -152,66 +172,66 @@
     </div>
 
     <div class="container">
-        <header class="hero">
-            <span style="font-weight: 700; color: var(--accent-red); font-size: 0.9rem;">EL NUEVO MODELO DE "INGRESOS SILENCIOSOS"</span>
+        <header class="hero animate">
+            <span style="font-weight: 800; color: var(--accent-red); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px;">El Nuevo Modelo de "Ingresos Silenciosos"</span>
             <h1>Cómo Construir un Imperio de Micro-Ventas Usando "Cuentas Fantasma"</h1>
             <p class="sub-headline">(Sin mostrar tu cara, sin grabar tu voz y sin tener que convertirte en un "Influencer")</p>
-            <a href="#" class="btn-ghost">VER EL PROTOCOLO INVISIBLE - $11 USD</a>
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-ghost">VER EL PROTOCOLO INVISIBLE - $11 USD</a>
         </header>
 
-        <section class="pain-section">
-            <p><strong>Te han mentido.</strong></p>
-            <p style="margin-top:10px;">Los "gurús" te dicen que para ganar dinero online tienes que:</p>
+        <section class="pain-section animate delay-1">
+            <p style="font-size: 1.2rem;"><strong>Te han mentido.</strong></p>
+            <p style="margin-top:15px; color: var(--accent-ghost);">Los "gurús" te dicen que para ganar dinero online tienes que:</p>
             <ul class="list-x">
-                <li>Exponer tu vida privada en Instagram Stories.</li>
-                <li>Hacer bailes ridículos en TikTok.</li>
-                <li>Soportar críticas de amigos y familiares.</li>
+                <li>Exponer tu vida privada en Instagram Stories todos los días.</li>
+                <li>Hacer bailes ridículos en TikTok para ganar seguidores.</li>
+                <li>Soportar las críticas de tus amigos, familia y "haters".</li>
             </ul>
-            <p>Si la sola idea de grabarte te da ansiedad... <strong>no estás solo.</strong> Y ya no es necesario.</p>
+            <p>Si la sola idea de grabarte te da ansiedad... <strong>no estás solo.</strong> Y tengo una excelente noticia: Ya no es necesario.</p>
         </section>
 
-        <section style="margin: 40px 0;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Deja de intentar ser "Famoso". Empieza a ser "Rentable".</h2>
-            <p>Usamos un modelo de <strong>Intermediación Anónima</strong>:</p>
-            <div style="background: var(--bg-dark); color: white; padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 0.9rem;">
-                Producto Ganador ➔ Tráfico Faceless ➔ Sistema Vende ➔ <strong>Tú Cobras</strong>.
+        <section class="animate delay-2" style="margin: 60px 0; text-align: center;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; letter-spacing: -0.02em;">Deja de intentar ser "Famoso". Empieza a ser "Rentable".</h2>
+            <p style="margin-bottom: 30px;">Usamos un modelo de <strong>Intermediación Anónima</strong>:</p>
+            <div style="background: var(--bg-dark); color: white; padding: 30px; border-radius: 12px; font-family: monospace; font-size: 1.1rem; display: inline-block; width: 100%;">
+                Producto Ganador ➔ Tráfico Faceless ➔ Sistema Vende ➔ <span style="color: #4ade80;">Tú Cobras</span>.
             </div>
-            <p>Tus amigos no sabrán que es tu negocio. Tu jefe no verá tus anuncios. Tu privacidad queda intacta.</p>
+            <p style="margin-top:25px; font-size: 0.95rem; color: var(--accent-ghost);">Tus amigos no sabrán que es tu negocio. Tu privacidad queda 100% intacta.</p>
         </section>
 
-        <section>
-            <h2 style="margin-bottom: 20px;">Manual de Operaciones:</h2>
+        <section class="animate delay-3">
+            <h2 style="margin-bottom: 25px; text-align: center;">Manual de Operaciones Técnicas:</h2>
             
             <div class="module-card">
                 <h3>👤 MÓDULO 1: PROTOCOLO GHOST</h3>
-                <p>Configuración anónima técnica:</p>
-                <ul>
+                <p>Configuración anónima desde cero:</p>
+                <ul style="padding-left: 20px; margin-top: 10px; font-size: 0.9rem;">
                     <li>Blindaje de cuentas para anonimato total.</li>
-                    <li>Técnica de "Contenido Curado" (100% legal).</li>
-                    <li>Edición de video sin usar tu voz.</li>
+                    <li>Técnica de "Contenido Curado" (100% legal y ético).</li>
+                    <li>Herramientas para vender sin usar tu voz real.</li>
                 </ul>
             </div>
 
             <div class="module-card">
                 <h3>🔐 MÓDULO 2: SELECCIÓN DE ACTIVOS</h3>
-                <p>Encuentra productos que "hablan por sí solos" en nichos aburridos pero altamente rentables.</p>
+                <p>Cómo encontrar productos que "hablan por sí solos" y no necesitan que un vendedor los empuje constantemente.</p>
             </div>
 
             <div class="module-card">
                 <h3>⚙️ MÓDULO 3: AUTOMATIZACIÓN</h3>
-                <p>Ventas sin conversaciones. El sistema trabaja mientras mantienes tu identidad bajo llave.</p>
+                <p>Configuración del sistema para que el cliente compre y reciba el producto sin que tengas que intervenir.</p>
             </div>
         </section>
 
-        <section class="guarantee-box">
-            <h3 style="margin-bottom: 10px;">🛡️ GARANTÍA DE PRIVACIDAD TOTAL</h3>
-            <p style="font-size: 0.9rem;">Si ves algo que te obligue a exponer tu identidad o te haga sentir incómodo... te devolvemos tus $11 inmediatamente.</p>
+        <section class="guarantee-box animate delay-3">
+            <h3 style="margin-bottom: 12px;">🛡️ GARANTÍA DE PRIVACIDAD TOTAL</h3>
+            <p style="font-size: 0.95rem;">Si ves algo que te obligue a exponer tu identidad o te haga sentir incómodo... te devolvemos tus $11 inmediatamente. Sin preguntas.</p>
         </section>
 
-        <div style="text-align: center; margin-bottom: 60px;">
-            <p style="margin-bottom: 20px;"><strong>¿Seguirás con miedo al "qué dirán" o serás un Arquitecto Invisible?</strong></p>
-            <a href="#" class="btn-ghost" style="background-color: #059669;">DESCARGAR PROTOCOLO POR $11</a>
-            <p style="font-size: 0.8rem; margin-top: 15px; color: var(--accent-ghost);">Tu identidad está segura con nosotros.</p>
+        <div class="animate delay-3" style="text-align: center; margin-bottom: 80px; padding: 0 20px;">
+            <p style="margin-bottom: 25px; font-size: 1.1rem;"><strong>¿Seguirás con miedo al "qué dirán" o te convertirás en un Arquitecto Invisible?</strong></p>
+            <a href="https://pay.hotmart.com/R100839726T?off=p4dyju05" class="btn-ghost" style="background-color: var(--success);">DESCARGAR PROTOCOLO POR $11</a>
+            <p style="font-size: 0.85rem; margin-top: 20px; color: var(--accent-ghost);">Acceso inmediato al sistema. Tu identidad está segura.</p>
         </div>
 
         <footer>
