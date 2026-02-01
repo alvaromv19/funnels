@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Ghost - Ingresos Silenciosos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a; /* Azul muy oscuro para el toque de privacidad */
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-white: #ffffff;
+            --accent-red: #ef4444;
+            --accent-ghost: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* BARRA DE AVISO */
+        .announcement-bar {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            padding: 10px 15px;
+            font-size: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-red);
+        }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+        /* HERO SECTION */
+        .hero { padding: 40px 0; text-align: center; }
+
+        h1 {
+            font-size: 2.1rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin: 20px 0;
+            letter-spacing: -0.03em;
+            color: var(--bg-dark);
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+
+        /* BOTONES */
+        .btn-ghost {
+            display: inline-block;
+            background-color: var(--bg-dark);
+            color: white;
+            text-decoration: none;
+            padding: 20px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* LEAD / PAIN POINTS */
+        .pain-section {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 20px 0;
+        }
+
+        .list-x { list-style: none; margin: 20px 0; }
+        .list-x li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .list-x li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        /* MÓDULOS - ESTILO TARJETA */
+        .module-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card h3 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-card p, .module-card li {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .module-card ul { padding-left: 20px; margin-top: 10px; }
+
+        /* GARANTÍA */
+        .guarantee-box {
+            background: #f1f5f9;
+            border: 2px solid var(--bg-dark);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        strong { color: var(--bg-dark); }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        🔴 SOLO PARA INTROVERTIDOS: OPERA 100% ANÓNIMO
+    </div>
+
+    <div class="container">
+        <header class="hero">
+            <span style="font-weight: 700; color: var(--accent-red); font-size: 0.9rem;">EL NUEVO MODELO DE "INGRESOS SILENCIOSOS"</span>
+            <h1>Cómo Construir un Imperio de Micro-Ventas Usando "Cuentas Fantasma"</h1>
+            <p class="sub-headline">(Sin mostrar tu cara, sin grabar tu voz y sin tener que convertirte en un "Influencer")</p>
+            <a href="#" class="btn-ghost">VER EL PROTOCOLO INVISIBLE - $11 USD</a>
+        </header>
+
+        <section class="pain-section">
+            <p><strong>Te han mentido.</strong></p>
+            <p style="margin-top:10px;">Los "gurús" te dicen que para ganar dinero online tienes que:</p>
+            <ul class="list-x">
+                <li>Exponer tu vida privada en Instagram Stories.</li>
+                <li>Hacer bailes ridículos en TikTok.</li>
+                <li>Soportar críticas de amigos y familiares.</li>
+            </ul>
+            <p>Si la sola idea de grabarte te da ansiedad... <strong>no estás solo.</strong> Y ya no es necesario.</p>
+        </section>
+
+        <section style="margin: 40px 0;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Deja de intentar ser "Famoso". Empieza a ser "Rentable".</h2>
+            <p>Usamos un modelo de <strong>Intermediación Anónima</strong>:</p>
+            <div style="background: var(--bg-dark); color: white; padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 0.9rem;">
+                Producto Ganador ➔ Tráfico Faceless ➔ Sistema Vende ➔ <strong>Tú Cobras</strong>.
+            </div>
+            <p>Tus amigos no sabrán que es tu negocio. Tu jefe no verá tus anuncios. Tu privacidad queda intacta.</p>
+        </section>
+
+        <section>
+            <h2 style="margin-bottom: 20px;">Manual de Operaciones:</h2>
+            
+            <div class="module-card">
+                <h3>👤 MÓDULO 1: PROTOCOLO GHOST</h3>
+                <p>Configuración anónima técnica:</p>
+                <ul>
+                    <li>Blindaje de cuentas para anonimato total.</li>
+                    <li>Técnica de "Contenido Curado" (100% legal).</li>
+                    <li>Edición de video sin usar tu voz.</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <h3>🔐 MÓDULO 2: SELECCIÓN DE ACTIVOS</h3>
+                <p>Encuentra productos que "hablan por sí solos" en nichos aburridos pero altamente rentables.</p>
+            </div>
+
+            <div class="module-card">
+                <h3>⚙️ MÓDULO 3: AUTOMATIZACIÓN</h3>
+                <p>Ventas sin conversaciones. El sistema trabaja mientras mantienes tu identidad bajo llave.</p>
+            </div>
+        </section>
+
+        <section class="guarantee-box">
+            <h3 style="margin-bottom: 10px;">🛡️ GARANTÍA DE PRIVACIDAD TOTAL</h3>
+            <p style="font-size: 0.9rem;">Si ves algo que te obligue a exponer tu identidad o te haga sentir incómodo... te devolvemos tus $11 inmediatamente.</p>
+        </section>
+
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p style="margin-bottom: 20px;"><strong>¿Seguirás con miedo al "qué dirán" o serás un Arquitecto Invisible?</strong></p>
+            <a href="#" class="btn-ghost" style="background-color: #059669;">DESCARGAR PROTOCOLO POR $11</a>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: var(--accent-ghost);">Tu identidad está segura con nosotros.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 Protocolo Ghost - Privacidad & Rentabilidad.
+        </footer>
+    </div>
+
+</body>
+</html>
